@@ -1,0 +1,11 @@
+langchain>=0.1.16
+langchain-core>=0.1.35
+langchain-community>=0.0.26
+langchain-groq>=0.1.4
+python-dotenv
+requests
+diffusers
+torch
+transformers
+accelerate
+playwright
