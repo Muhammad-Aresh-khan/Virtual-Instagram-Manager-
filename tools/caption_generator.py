@@ -1,7 +1,7 @@
 
 from langchain_core.prompts import ChatPromptTemplate , SystemMessagePromptTemplate ,HumanMessagePromptTemplate
 from langchain_core.output_parsers import StrOutputParser
-from langchain_groq import ChatGroq  
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.runnables import Runnable
 
 import os
@@ -9,11 +9,11 @@ import sys
 current_dir = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.abspath(os.path.join(current_dir, ".."))  # goes to insta_agent/
 sys.path.insert(0, project_root)
-from app.config import GROQ_API_KEY, GROQ_MODEL , CAPTION_PROMPT_SYSTEM
+from app.config import API_KEY, MODEL , CAPTION_PROMPT_SYSTEM
 # Set up the LLM
-llm = ChatGroq(
-    api_key=GROQ_API_KEY,
-    model=GROQ_MODEL
+llm = ChatGoogleGenerativeAI(
+    api_key=API_KEY,
+    model=MODEL
 
 )
 
