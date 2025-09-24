@@ -20,7 +20,7 @@ llm = ChatGoogleGenerativeAI(
 # Prompt template
 prompt = ChatPromptTemplate.from_messages([
     SystemMessagePromptTemplate.from_template(CAPTION_PROMPT_SYSTEM),
-    HumanMessagePromptTemplate.from_template("Generate a short, engaging Instagram caption for the topic: {topic}. Make it creative and trendy.")
+    HumanMessagePromptTemplate.from_template("Generate a short, engaging Instagram caption for the topic: {topic}. Make it creative and trendy.IMPORTANT INSTRUCTIONS:DOnt give multiple Captions just one and no extra text and you respone will driectly be posted to instagram so only single caption include hastags for reach")
 ])
 
 # Output parser

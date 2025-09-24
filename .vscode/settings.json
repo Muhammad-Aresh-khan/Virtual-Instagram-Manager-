@@ -1,0 +1,8 @@
+{
+    "python.defaultInterpreterPath": "C:\\Users\\Lenovo\\anaconda3\\envs\\virtual-instagram-manager\\python.exe",
+    "python.analysis.extraPaths": [
+        "C:\\Users\\Lenovo\\anaconda3\\envs\\virtual-instagram-manager\\Lib\\site-packages"
+    ],
+    "python.analysis.diagnosticMode": "openFilesOnly",
+    "python.languageServer": "Pylance"
+}
