@@ -6,8 +6,8 @@ google-generativeai>=0.3.0
 langchain-google-genai
 python-dotenv
 requests
-# diffusers
-# torch
-# transformers
-# accelerate
+diffusers
+torch
+transformers
+accelerate
 playwright

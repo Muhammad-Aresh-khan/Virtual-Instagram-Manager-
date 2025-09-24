@@ -1,15 +1,28 @@
-from google import genai
 import os
 import sys
-
-# Set up project path
+import torch
+from dotenv import load_dotenv
+from diffusers import StableDiffusionPipeline
+from langchain_core.runnables import RunnableLambda
+from app import config
+path=config.path
+# === Resolve Paths ===
 current_dir = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.abspath(os.path.join(current_dir, ".."))  # goes to insta_agent/
 sys.path.insert(0, project_root)
 
-from app.config import API_KEY
-client = genai.Client(api_key=API_KEY)
+# === Import Tokens and Custom Modules ===
+from app.config import HUGGING_FACE as HF_TOKEN
 
-print("Available models with this key:\n")
-for model in client.models.list():
-    print(model.name, model.supported_actions)
+
+# === Initialize Stable Diffusion Pipeline ===
+pipe = StableDiffusionPipeline.from_pretrained(
+    "CompVis/stable-diffusion-v1-4",
+).to("cpu") 
+prompt="man doing workout"
+# === Image Generation Function ===
+def generate_image(prompt: str):   
+    image = pipe(prompt).images[0]
+    image.save(path)
+    return f"✅ Image saved at: {path}"
+    

@@ -1,11 +1,12 @@
+import utils.session
 import os
 import re
 from config import  CAPTION_PATH, IMAGE_PATH,USERNAME,PASSWORD
 from playwright.sync_api import sync_playwright
 
 from agents import post_agent
-caption=input("Enter Topic For Post")
-post_agent.post_agent(caption)
+topic=input("Enter Topic For Post")
+post_agent.post_agent(topic)
 
 USERNAME = "beautiful_caption_710"
 PASSWORD = "123Wellcome!@"
